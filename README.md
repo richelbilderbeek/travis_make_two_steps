@@ -20,13 +20,25 @@ all: output.txt
 ```
 
 Second, we specify in the `Makefile` that `output.txt` is dependent on
-`input.txt`. If `input.txt` changes, it will be copied to `output.txt`,
+`intermediate.txt`. If `intermediate.txt` changes, 
+it will be copied to `output.txt`,
 after which some text is appended. 
 
 ```
-output.txt: input.txt
-	cp input.txt output.txt
-	echo "is cool" >> output.txt
+output.txt: intermediate.txt
+	cp intermediate.txt output.txt
+	echo "cool" >> output.txt
+```
+
+Third, we specify in the `Makefile` that `intermediate.txt` is dependent on
+`input.txt`. If `input.txt` changes, 
+it will be copied to `intermediate.txt`,
+after which some text is appended. 
+
+```
+intermediate.txt: input.txt
+	cp input.txt intermediate.txt
+	echo "is" >> intermediate.txt
 ```
 
 ## FAQ

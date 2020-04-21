@@ -14,6 +14,5 @@ pics/out.png: Makefile
 	make -Bnd | ../../makefile2graph/make2graph | dot -Tpng -o pics/out.png
 
 clean: 
-	rm intermediate.txt
-	rm output.txt
+	rm -f intermediate.txt output.txt
 
